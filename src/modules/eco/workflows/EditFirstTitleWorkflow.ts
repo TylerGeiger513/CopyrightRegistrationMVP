@@ -28,6 +28,7 @@ export class EditFirstTitleWorkflow extends BaseWorkflow {
     await editTitlePage.updateTitle("THIS IS A TEST TITLE");
 
     await titlesStep.waitUntilLoaded();
+    await titlesStep.continue();
 
     this.log("First title updated successfully", {
       title: "THIS IS A TEST TITLE",
