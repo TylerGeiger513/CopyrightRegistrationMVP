@@ -15,6 +15,7 @@ import { TemplateFormPage } from "../pages/TemplateFormPage.js";
 import { EditTitlePage } from "../pages/steps/EditTitlePage.js";
 import { TitlesStep } from "../pages/steps/TitlesStep.js";
 import { TypeOfWorkStep } from "../pages/steps/TypeOfWorkStep.js";
+import { PublicationCompletionStep } from "../pages/steps/PublicationCompletionStep.js";
 
 export class EcoClient {
   private readonly browserManager: BrowserManager;
@@ -122,6 +123,10 @@ export class EcoClient {
     this.registerPage(
       ECO_PAGE_KEYS.EDIT_TITLE_PAGE,
       new EditTitlePage(context),
+    );
+    this.registerPage(
+      ECO_PAGE_KEYS.PUBLICATION_COMPLETION_STEP,
+      new PublicationCompletionStep(context),
     );
   }
 
