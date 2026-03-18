@@ -16,7 +16,10 @@ import { EditTitlePage } from "../pages/steps/EditTitlePage.js";
 import { TitlesStep } from "../pages/steps/TitlesStep.js";
 import { TypeOfWorkStep } from "../pages/steps/TypeOfWorkStep.js";
 import { PublicationCompletionStep } from "../pages/steps/PublicationCompletionStep.js";
-
+import { AuthorsStep } from "../pages/steps/AuthorsStep.js";
+import { LimitationOfClaimStep } from "../pages/steps/LimitationOfClaimStep.js";
+import { RightsPermissionsStep } from "../pages/steps/RightsPermissionsStep.js";
+import { ReviewSubmissionStep } from "../pages/steps/ReviewSubmissionStep.js";
 export class EcoClient {
   private readonly browserManager: BrowserManager;
   private readonly pageRegistry: PageRegistry;
@@ -127,6 +130,20 @@ export class EcoClient {
     this.registerPage(
       ECO_PAGE_KEYS.PUBLICATION_COMPLETION_STEP,
       new PublicationCompletionStep(context),
+    );
+
+    this.registerPage(ECO_PAGE_KEYS.AUTHORS_STEP, new AuthorsStep(context));
+    this.registerPage(
+      ECO_PAGE_KEYS.LIMITATION_OF_CLAIM_STEP,
+      new LimitationOfClaimStep(context),
+    );
+    this.registerPage(
+      ECO_PAGE_KEYS.RIGHTS_PERMISSIONS_STEP,
+      new RightsPermissionsStep(context),
+    );
+    this.registerPage(
+      ECO_PAGE_KEYS.REVIEW_SUBMISSION_STEP,
+      new ReviewSubmissionStep(context),
     );
   }
 
